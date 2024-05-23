@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { formatEther } from "ethers";
 
-const BalanceOf = ({ contract }) => {
+const BalanceOf = ({ contract, symbol }) => {
   const [address, setAddress] = useState("");
   const [balance, setBalance] = useState();
 
@@ -22,7 +22,9 @@ const BalanceOf = ({ contract }) => {
         balanceOf
       </button>
       {balance ? (
-        <div className="response-style">{balance}</div>
+        <div className="response-style">
+          {balance} [{symbol}]
+        </div>
       ) : (
         <input
           className="response-style"

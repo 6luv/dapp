@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { formatEther } from "ethers";
 
-const TotalSupply = ({ contract }) => {
+const TotalSupply = ({ contract, symbol }) => {
   const [totalSupply, setTotalSupply] = useState();
 
   const onClickTotalSupply = async () => {
@@ -19,7 +19,9 @@ const TotalSupply = ({ contract }) => {
         totalSupply
       </button>
       {totalSupply ? (
-        <div className="response-style">{totalSupply}</div>
+        <div className="response-style">
+          {totalSupply} [{symbol}]
+        </div>
       ) : (
         <div className="response-style text-gray-400">totalSupply</div>
       )}

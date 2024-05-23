@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Login from "./components/login";
 import BalanceOf from "./components/BalanceOf";
 import Name from "./components/Name";
@@ -13,6 +13,21 @@ import BurnToken from "./components/BurnToken";
 const App = () => {
   const [signer, setSigner] = useState();
   const [contract, setContract] = useState();
+  const [symbol, setSymbol] = useState();
+
+  const getSymbol = async () => {
+    try {
+      const response = await contract.symbol();
+      setSymbol(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    if (!contract) return;
+    getSymbol();
+  }, [contract]);
 
   return (
     <div className="bg-[#232336] min-h-screen flex flex-col justify-start items-center py-16">
@@ -25,10 +40,10 @@ const App = () => {
       {signer && (
         <div className="flex flex-col mt-8 gap-6">
           <Allowance contract={contract} />
-          <BalanceOf contract={contract} />
+          <BalanceOf contract={contract} symbol={symbol} />
           <Name contract={contract} />
-          <Symbol />
-          <TotalSupply contract={contract} />
+          <Symbol symbol={symbol} />
+          <TotalSupply contract={contract} symbol={symbol} />
           <Approve contract={contract} />
           <BurnToken contract={contract} />
           <Transfer contract={contract} />
