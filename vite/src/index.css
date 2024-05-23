@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .view-button-style {
+    @apply bg-[#355f7d] text-white px-3 py-2 rounded-md max-w-[106px] w-full;
+  }
+
+  .write-button-style {
+    @apply bg-[#c97539] text-white px-3 py-2 rounded-md max-w-[106px] w-full;
+  }
+
+  .response-style {
+    @apply text-white bg-[#35384c] rounded-md max-w-[500px] py-2 text-left pl-5 w-full;
+  }
+}
