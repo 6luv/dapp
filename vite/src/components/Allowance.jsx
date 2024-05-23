@@ -10,7 +10,7 @@ const Allowance = ({ contract }) => {
     try {
       if (!ownerAddress || !spenderAddress) return;
       const response = await contract.allowance(ownerAddress, spenderAddress);
-      console.log(response);
+
       setAmount(formatEther(response));
     } catch (error) {
       console.error(error);
