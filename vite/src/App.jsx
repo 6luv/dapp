@@ -6,6 +6,7 @@ import Symbol from "./components/Symbol";
 import TotalSupply from "./components/TotalSupply";
 import Allowance from "./components/Allowance";
 import Approve from "./components/Approve";
+import Transfer from "./components/Transfer";
 
 const App = () => {
   const [signer, setSigner] = useState();
@@ -27,6 +28,7 @@ const App = () => {
           <Symbol />
           <TotalSupply contract={contract} />
           <Approve contract={contract} />
+          <Transfer contract={contract} />
         </div>
       )}
     </div>
