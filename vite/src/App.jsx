@@ -8,6 +8,7 @@ import Allowance from "./components/Allowance";
 import Approve from "./components/Approve";
 import Transfer from "./components/Transfer";
 import TransferFrom from "./components/TransferFrom";
+import BurnToken from "./components/BurnToken";
 
 const App = () => {
   const [signer, setSigner] = useState();
@@ -29,6 +30,7 @@ const App = () => {
           <Symbol />
           <TotalSupply contract={contract} />
           <Approve contract={contract} />
+          <BurnToken contract={contract} />
           <Transfer contract={contract} />
           <TransferFrom contract={contract} />
         </div>

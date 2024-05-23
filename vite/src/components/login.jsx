@@ -26,7 +26,8 @@ const Login = ({ signer, setSigner, setContract }) => {
     if (!signer) return;
 
     setContract(
-      new Contract("0xD3c461a47adEC72FBF437Fe80afA0BeB815A473c", abi, signer)
+      //   new Contract("0xD3c461a47adEC72FBF437Fe80afA0BeB815A473c", abi, signer)
+      new Contract("0x25993E30656d7561F6FEB275f02E7B5e546aFaFf", abi, signer)
     );
   }, [signer]);
 
