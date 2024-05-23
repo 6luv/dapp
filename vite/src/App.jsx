@@ -19,14 +19,16 @@ const App = () => {
         contract={contract}
         setContract={setContract}
       />
-      <div className="flex flex-col mt-8 gap-6">
-        <Allowance contract={contract} />
-        <BalanceOf contract={contract} />
-        <Name contract={contract} />
-        <Symbol />
-        <TotalSupply contract={contract} />
-        <Approve contract={contract} />
-      </div>
+      {signer && (
+        <div className="flex flex-col mt-8 gap-6">
+          <Allowance contract={contract} />
+          <BalanceOf contract={contract} />
+          <Name contract={contract} />
+          <Symbol />
+          <TotalSupply contract={contract} />
+          <Approve contract={contract} />
+        </div>
+      )}
     </div>
   );
 };
