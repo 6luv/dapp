@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Login from "./components/login";
+import Login from "./components/Login";
 import BalanceOf from "./components/BalanceOf";
 import Name from "./components/Name";
 import Symbol from "./components/Symbol";
